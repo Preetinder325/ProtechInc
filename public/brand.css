@@ -13,3 +13,17 @@
 .brand-mark span {
   line-height: 1;
 }
+
+.hide-mobile {
+  display: none !important;
+}
+
+@media (min-width: 768px) {
+  .hide-mobile {
+    display: inline-flex !important;
+  }
+
+  img.hide-mobile {
+    display: block !important;
+  }
+}
