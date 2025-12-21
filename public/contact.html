@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Protech Inc | Contact</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="brand.css" />
+</head>
+<body class="font-sans">
+  <header class="sticky top-0 z-20 border-b border-sand-700/40 bg-sand/90 backdrop-blur">
+    <div class="shell flex items-center justify-between py-4">
+      <a class="brand-mark font-display text-lg tracking-tight" href="index.html">
+        <img class="brand-logo" src="assets/Logo%20W-BG.png" alt="Protech Inc logo" />
+        <span>Protech Inc</span>
+      </a>
+      <nav class="hidden items-center gap-6 text-sm font-semibold md:flex">
+        <a class="nav-link" href="index.html">Home</a>
+        <a class="nav-link" href="about.html">About</a>
+        <a class="nav-link" href="hiring.html">Hiring</a>
+        <a class="nav-link text-ink" href="contact.html" aria-current="page">Contact</a>
+      </nav>
+      <a class="btn-primary text-sm md:inline-flex" href="mailto:vks.protech@gmail.com">Email us</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="border-b border-sand-700/30 bg-white" data-reveal>
+      <div class="shell grid gap-10 py-14 md:grid-cols-2">
+        <div class="space-y-4">
+          <span class="pill">Get in touch</span>
+          <h1 class="font-display text-4xl text-ink">Schedule technicians for your installs.</h1>
+          <p class="text-lg text-slate-700">Tell us about the address, service type, and timing. We handle fibre and copper internet, Homephone, TV boxes, wireless internet CPE, smart security, and SIM activations.</p>
+          <div class="card space-y-3">
+            <p class="text-sm font-semibold text-slate-600">Prefer email?</p>
+            <div class="space-y-2 text-sm font-semibold text-ink">
+              <a class="block underline underline-offset-4" href="mailto:vks.protech@gmail.com">vks.protech@gmail.com</a>
+            </div>
+          </div>
+          <img class="illustration" src="assets/support-customer-care.png" alt="Support agent collaborating with field technician" loading="lazy" />
+        </div>
+        <div class="card">
+          <form id="contact-form" class="space-y-4">
+            <div>
+              <label class="block text-sm font-semibold text-ink" for="name">Name</label>
+              <input class="mt-2 w-full rounded-xl border border-sand-700/50 bg-white px-3 py-3 text-sm focus:border-ink focus:outline-none focus:ring-2 focus:ring-ink/10" type="text" id="name" name="name" required />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-ink" for="email">Work email</label>
+              <input class="mt-2 w-full rounded-xl border border-sand-700/50 bg-white px-3 py-3 text-sm focus:border-ink focus:outline-none focus:ring-2 focus:ring-ink/10" type="email" id="email" name="email" required />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-ink" for="company">Company</label>
+              <input class="mt-2 w-full rounded-xl border border-sand-700/50 bg-white px-3 py-3 text-sm focus:border-ink focus:outline-none focus:ring-2 focus:ring-ink/10" type="text" id="company" name="company" />
+            </div>
+            <div>
+              <label class="block text-sm font-semibold text-ink" for="message">What do you need?</label>
+              <textarea class="mt-2 w-full rounded-xl border border-sand-700/50 bg-white px-3 py-3 text-sm focus:border-ink focus:outline-none focus:ring-2 focus:ring-ink/10" id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button class="btn-primary w-full justify-center" type="submit">Send message</button>
+            <p id="form-status" class="text-sm text-slate-600" role="status"></p>
+          </form>
+          <p class="mt-4 text-xs text-slate-500">Your message is stored securely in our private Firebase project. We do not share your information.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-sand/60" data-reveal>
+      <div class="shell flex flex-col gap-4 py-12 md:flex-row md:items-center md:justify-between">
+        <div>
+          <span class="pill">Next step</span>
+          <h3 class="font-display text-2xl text-ink">We can start with a 30-minute discovery call.</h3>
+          <p class="text-slate-700">We will suggest a small pilot and a clear timeline.</p>
+        </div>
+        <div class="flex gap-3">
+          <a class="btn-primary" href="mailto:vks.protech@gmail.com">Email the team</a>
+          <a class="btn-secondary" href="tel:+1234567890">Book a call</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-sand-700/30 bg-white">
+    <div class="shell flex flex-col gap-3 py-6 md:flex-row md:items-center md:justify-between">
+      <p class="text-sm text-slate-600">Protech Inc — technology partners for what is next.</p>
+      <div class="flex gap-4 text-sm font-semibold text-ink">
+        <a href="mailto:vks.protech@gmail.com">vks.protech@gmail.com</a>
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="reveal.js"></script>
+  <script src="./firebase-config.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore-compat.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script>
+    const firebaseConfig = window.PROTECH_FIREBASE_CONFIG || {
+      apiKey: "YOUR_API_KEY",
+      authDomain: "YOUR_AUTH_DOMAIN",
+      projectId: "YOUR_PROJECT_ID",
+      storageBucket: "YOUR_STORAGE_BUCKET",
+      messagingSenderId: "YOUR_SENDER_ID",
+      appId: "YOUR_APP_ID",
+      measurementId: "YOUR_MEASUREMENT_ID",
+    };
+
+    const hasRealConfig = Object.values(firebaseConfig).every((value) => value && !String(value).startsWith("YOUR_"));
+    const emailJsConfig = {
+      serviceId: "service_rydfrx5",
+      templateId: "template_rklvwq6",
+      publicKey: "t7vLK5lavHsS4WS5JJRH4",
+      toEmail: "techburner14812@gmail.com",
+    };
+    const hasEmailJs = Object.values(emailJsConfig).every((value) => value);
+
+    const statusEl = document.getElementById("form-status");
+    const form = document.getElementById("contact-form");
+
+    if (!hasRealConfig) {
+      statusEl.textContent = "Add your Firebase config in public/contact.html or set window.PROTECH_FIREBASE_CONFIG before this script.";
+      form.addEventListener("submit", (e) => e.preventDefault());
+    } else {
+      const app = firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore(app);
+      if (hasEmailJs && window.emailjs) {
+        emailjs.init(emailJsConfig.publicKey);
+      }
+
+      form.addEventListener("submit", async (event) => {
+        event.preventDefault();
+        const data = {
+          name: form.name.value.trim(),
+          email: form.email.value.trim(),
+          company: form.company.value.trim(),
+          message: form.message.value.trim(),
+          createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+        };
+
+        statusEl.textContent = "Sending...";
+        try {
+          await db.collection("contactMessages").add(data);
+          if (hasEmailJs && window.emailjs) {
+            try {
+              await emailjs.send(emailJsConfig.serviceId, emailJsConfig.templateId, {
+                from_name: data.name || "Website visitor",
+                from_email: data.email || "no-reply@protech.inc",
+                company: data.company || "N/A",
+                message: data.message || "",
+                to_email: emailJsConfig.toEmail,
+              });
+            } catch (emailErr) {
+              console.error("EmailJS error", emailErr);
+              statusEl.textContent = "Saved your message, but email notification failed. Check EmailJS service/template/public key and allowed origins.";
+              return;
+            }
+          }
+          statusEl.textContent = "Thanks! We will reply within one business day.";
+          form.reset();
+        } catch (error) {
+          console.error(error);
+          statusEl.textContent = "Something went wrong. Email us at hello@protech.inc";
+        }
+      });
+    }
+  </script>
+</body>
+</html>

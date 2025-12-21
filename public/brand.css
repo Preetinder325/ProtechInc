@@ -1,0 +1,15 @@
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.brand-logo {
+  display: block;
+  height: 2rem;
+  width: auto;
+}
+
+.brand-mark span {
+  line-height: 1;
+}
