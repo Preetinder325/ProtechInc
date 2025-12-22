@@ -156,6 +156,7 @@
               });
             } catch (emailErr) {
               console.error("EmailJS error", emailErr);
+              console.log("Console log is : ",data.email)
               statusEl.textContent = "Saved your message, but email notification failed. Check EmailJS service/template/public key and allowed origins.";
               return;
             }
