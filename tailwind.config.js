@@ -12,12 +12,12 @@ module.exports = {
       },
       colors: {
         sand: {
-          DEFAULT: "#e8f7f9",
-          700: "#b7e6ec",
-          900: "#66b9c6",
+          DEFAULT: "#e9f1fb",
+          700: "#a9c3e6",
+          900: "#1f4f8a",
         },
-        ink: "#0f1720",
-        forest: "#0f766e",
+        ink: "#08244a",
+        forest: "#1f4f8a",
       },
       boxShadow: {
         soft: "0 10px 40px rgba(15, 23, 32, 0.06)",
