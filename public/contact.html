@@ -123,7 +123,7 @@
   <script src="./firebase-config.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/10.13.1/firebase-firestore-compat.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script src="mobile-nav.js"></script>
   <script>
     const firebaseConfig = window.PROTECH_FIREBASE_CONFIG || {
@@ -141,7 +141,7 @@
       serviceId: "service_rydfrx5",
       templateId: "template_rklvwq6",
       publicKey: "n2O8S3foBOg9UxdfT",
-      toEmail: "techburner14812@gmail.com",
+      toEmail: "vks.protech@gmail.com",
     };
     const hasEmailJs = Object.values(emailJsConfig).every((value) => value);
 
@@ -155,7 +155,9 @@
       const app = firebase.initializeApp(firebaseConfig);
       const db = firebase.firestore(app);
       if (hasEmailJs && window.emailjs) {
-        emailjs.init(emailJsConfig.publicKey);
+        emailjs.init({
+          publicKey: emailJsConfig.publicKey,
+        });
       }
 
       form.addEventListener("submit", async (event) => {
@@ -182,8 +184,9 @@
               });
             } catch (emailErr) {
               console.error("EmailJS error", emailErr);
-              console.log("Console log is : ",emailJsConfig.toEmail)
-              statusEl.textContent = "Saved your message, but email notification failed. Check EmailJS service/template/public key and allowed origins.";
+              const emailStatus = emailErr?.status ? ` (${emailErr.status})` : "";
+              const emailText = emailErr?.text ? ` ${emailErr.text}` : "";
+              statusEl.textContent = `Saved your message, but email notification failed${emailStatus}.${emailText} Check EmailJS service/template/public key and allowed origins.`;
               return;
             }
           }
@@ -191,7 +194,7 @@
           form.reset();
         } catch (error) {
           console.error(error);
-          statusEl.textContent = "Something went wrong. Email us at techburner14812@gmail.com or check the console for errors.";
+          statusEl.textContent = "Something went wrong. Email us at vks.protech@gmail.com or check the console for errors.";
         }
       });
     }
